@@ -12,7 +12,8 @@ import { ProjectManagerDisplayComponent } from '../app-project-manager-modal/app
 export class TaskService {
 
   //private baseUrl = 'http://localhost:8080/task'; //local setup
-  private baseUrl = 'http://localhost:8085/pmappservice/task'; //server deployment
+  private baseUrl = '/task';
+  //private baseUrl = 'http://localhost:8085/pmappservice/task'; //server deployment
 
   constructor(
     private projectUserHttpService: AppHttpService,

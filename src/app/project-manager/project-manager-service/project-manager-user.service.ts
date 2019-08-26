@@ -12,7 +12,8 @@ import { ProjectManagerDisplayComponent } from '../app-project-manager-modal/app
 export class ProjectUserService {
 
   // private baseUrl = 'http://localhost:8080/user'; //local setup
-  private baseUrl = 'http://localhost:8085/pmappservice/user'; //server deployment 
+  private baseUrl = '/user';
+  //private baseUrl = 'http://localhost:8085/pmappservice/user'; //server deployment 
 
   constructor(
     private projectUserHttpService: AppHttpService,
