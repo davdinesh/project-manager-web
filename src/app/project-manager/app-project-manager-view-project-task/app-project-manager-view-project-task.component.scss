@@ -1,0 +1,169 @@
+@import "../../../assets/styles/variables";
+
+.app-main-padding {
+  padding-left: 20px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.header-label {
+  padding-left: 0px !important;
+  padding-right: 10px !important;
+  font-family: open_sansbold !important;
+  font-size: $font-lg !important;
+}
+
+.header-sort-label {
+  padding-left: 0px !important;
+  padding-right: 10px !important;
+  font-family: open_sansregular !important;
+  font-size: $font-md !important;
+  cursor: pointer !important;
+}
+
+.dFlex-wrap {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  vertical-align: middle !important;
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+.span-padding {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  vertical-align: middle !important;
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+.button-style {
+  font-family: open_sanslight !important;
+  font-size: $font-lg !important;
+  background-color: $font-blue !important;
+  color: $white !important;
+}
+
+.custom-divider {
+  background-color: #e0e0e0 !important;
+}
+
+.padding-10px {
+  padding-top: 10px !important;
+  padding-bottom: 0px !important;
+}
+
+.selected-menu-color {
+  color: $font-blue !important;
+}
+
+.regular-menu-color {
+  color: $black !important;
+}
+
+.inputTextFont {
+  font-family: open_sansregular !important;
+  font-size: $font-lg !important;
+}
+
+.mat-card-custom {
+  background-color: $white !important;
+  color: $black !important;
+}
+
+.mat-class-div {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.mat-card {
+  width: 100% !important;
+}
+
+.table-result-header {
+  font-family: open_sansbold !important;
+  font-size: $font-lg !important;
+}
+
+.table-result-data {
+  font-family: open_sanslight !important;
+  font-size: $font-md !important;
+}
+
+.table-cols1 {
+  width: 200px !important;
+}
+
+.table-cols2 {
+  width: 200px !important;
+}
+
+.table-cols3 {
+  width: 50px !important;
+}
+
+.table-cols4 {
+  width: 100px !important;
+}
+
+.table-cols5 {
+  width: 100px !important;
+}
+
+.table-cols6 {
+  width: 200px !important;
+}
+
+.button-spacing {
+  padding-right: 10px !important;
+}
+
+.mat-button-row {
+  font-family: open_sansregular !important;
+  font-size: $font-md !important;
+}
+
+.priority-align {
+  text-align: right !important;
+}
+
+.mat-button-row1 {
+  font-family: open_sansregular !important;
+  font-size: $font-md !important;
+  background-color: lightblue !important;
+  color: $black !important;
+  font-weight: bold !important;
+}
+
+.label--completed-padding {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.selectionHeader {
+  font-family: open_sansbold !important;
+  font-size: $font-md !important;
+}
+
+.selectionRow {
+  font-family: open_sansbold !important;
+  font-size: $font-md !important;
+}
+
+.row-user-click {
+  cursor: pointer !important;
+  color: $font-blue !important;
+}
+
+.bgcolor-suspend {
+  background-color: lightcoral !important;
+}
+
+.bgcolor-completed {
+  background-color: lightgreen !important;
+}
+
+.bgcolor-nocolor {
+  background-color: white !important;
+}
