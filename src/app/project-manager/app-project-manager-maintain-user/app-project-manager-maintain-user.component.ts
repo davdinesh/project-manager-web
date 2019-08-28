@@ -107,19 +107,21 @@ export class AppProjectManagerMaintainUserComponent implements OnInit {
       userDetail.lastName = this.newUpdateLastName;
       userDetail.employeeId = this.newUpdateEmployeeId;
       this.prjModalService.modelOpen('Confirmation', 'Are you sure want to update this User?', '', [], true, '', false, true);
+      setTimeout(() => {
+        this.prjSharedService.isConfirmationValueMessage.subscribe((isValue) => {
 
-      this.prjSharedService.isConfirmationValueMessage.subscribe((isValue) => {
-
-        if (isValue) {
-          this.prjUserService.updateUserToDatabase(this.isEditUserId, userDetail).subscribe((data: any) => {
-            this.prjModalService.modelOpen('Updated', 'User has been updated', '', [], true, '', false, false);
-            this.addUpdateButton = "Add User";
-            this.resetUserDetails();
-            this.getUserListData();
-          })
-
-        }
-      })
+          if (isValue) {
+            this.prjUserService.updateUserToDatabase(this.isEditUserId, userDetail).subscribe((data: any) => {
+              this.prjModalService.modelOpen('Updated', 'User has been updated', '', [], true, '', false, false);
+              this.addUpdateButton = "Add User";
+              this.resetUserDetails();
+              this.getUserListData();
+            })
+  
+          }
+        })
+      });
+      
 
 
     } else { // add user details.
@@ -140,17 +142,19 @@ export class AppProjectManagerMaintainUserComponent implements OnInit {
           addUserDetail.employeeId = this.newUpdateEmployeeId;
 
           this.prjModalService.modelOpen('Confirmation', 'Are you sure want to Add this new User?', '', [], true, '', false, true);
-
-          this.prjSharedService.isConfirmationValueMessage.subscribe((isValue) => {
-            if (isValue) {
-
-              this.prjUserService.addUserToDatabase(addUserDetail).subscribe((data: any) => {
-                this.prjModalService.modelOpen('Added', 'New User Saved to System', '', [], true, '', false, false);
-                this.resetUserDetails();
-                this.getUserListData();
-              })
-            }
-          })
+          setTimeout(() => {
+            this.prjSharedService.isConfirmationValueMessage.subscribe((isValue) => {
+              if (isValue) {
+  
+                this.prjUserService.addUserToDatabase(addUserDetail).subscribe((data: any) => {
+                  this.prjModalService.modelOpen('Added', 'New User Saved to System', '', [], true, '', false, false);
+                  this.resetUserDetails();
+                  this.getUserListData();
+                })
+              }
+            })
+          });
+          
         }
 
       } else {

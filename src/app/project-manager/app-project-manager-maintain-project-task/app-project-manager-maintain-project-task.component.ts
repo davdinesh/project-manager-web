@@ -13,6 +13,7 @@ import { AddTasks } from '../project-manager-models/project_manager_add_tasks.mo
 import { AddParentTasks } from '../project-manager-models/project_manager_add_parent_task.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ViewTasks } from '../project-manager-models/project_manager_view_tasks.model';
+import { delay } from 'rxjs/operators';
 
 
 @Component({
@@ -410,7 +411,7 @@ export class AppProjectManagerMaintainProjectTaskComponent implements OnInit {
               parentTask.parentDesc = this.newTaskName;
 
               this.prjTaskService.addParentTaskToDatabase(parentTask).subscribe((data: any) => {
-
+                delay(1000);
                 this.resetAddTaskData();
                 this.prjModalService.modelOpen('Success', 'Parent Task added successfully', '', [], true, '', false, false);
 
@@ -464,7 +465,7 @@ export class AppProjectManagerMaintainProjectTaskComponent implements OnInit {
                     updateTask.taskUserId = this.newUserDetails.userId;
 
                     this.prjTaskService.addTaskToDatabase(updateTask).subscribe((data: any) => {
-
+                      delay(1000);
                       this.resetAddTaskData();
                       this.prjModalService.modelOpen('Success', 'Task added successfully', '', [], true, '', false, false);
 

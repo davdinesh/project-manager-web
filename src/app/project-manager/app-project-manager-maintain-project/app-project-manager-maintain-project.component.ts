@@ -291,7 +291,7 @@ export class AppProjectManagerMaintainProjectComponent implements OnInit {
   
                 }
               })
-            })
+            });
             
           }
 
