@@ -244,19 +244,22 @@ export class AppProjectManagerMaintainProjectComponent implements OnInit {
 
             this.prjModalService.modelOpen('Confirmation', 'Are you sure want to add this Project?', '', [], true, '', false, true);
 
-            this.prjDataSharedService.isConfirmationValueMessage.subscribe(isValue => {
+            setTimeout(() => {
+              this.prjDataSharedService.isConfirmationValueMessage.subscribe(isValue => {
 
-              if (isValue) {
-
-                this.prjApiService.addProjectToDatabase(newProjectAddDetails).subscribe((data) => {
-                  this.prjModalService.modelOpen('Success', 'New Project has been added to database.', '', [], true, '', false, false);
-                  this.getAllProjectDetailsFromDatabase();
-                  this.resetAddProjectDetails();
-                });
-
-              }
-
-            })
+                if (isValue) {
+  
+                  this.prjApiService.addProjectToDatabase(newProjectAddDetails).subscribe((data) => {
+                    this.prjModalService.modelOpen('Success', 'New Project has been added to database.', '', [], true, '', false, false);
+                    this.getAllProjectDetailsFromDatabase();
+                    this.resetAddProjectDetails();
+                  });
+  
+                }
+  
+              })
+            });
+            
 
           } else {
 
@@ -276,18 +279,20 @@ export class AppProjectManagerMaintainProjectComponent implements OnInit {
             modifyProjectDetails.completeTasks = this.updateProjectDetails.completeTasks;
 
             this.prjModalService.modelOpen('Confirmation', 'Are you sure want to update this Project?', '', [], true, '', false, true);
-
-            this.prjDataSharedService.isConfirmationValueMessage.subscribe(isValue => {
-              if (isValue) {
-
-                this.prjApiService.updateProjectToDatabase(modifyProjectDetails.projectId, modifyProjectDetails).subscribe((data) => {
-                  this.prjModalService.modelOpen('Success', 'Project Updated.', '', [], true, '', false, false);
-                  this.resetAddProjectDetails();
-                  this.getAllProjectDetailsFromDatabase();
-                })
-
-              }
+            setTimeout(() => {
+              this.prjDataSharedService.isConfirmationValueMessage.subscribe(isValue => {
+                if (isValue) {
+  
+                  this.prjApiService.updateProjectToDatabase(modifyProjectDetails.projectId, modifyProjectDetails).subscribe((data) => {
+                    this.prjModalService.modelOpen('Success', 'Project Updated.', '', [], true, '', false, false);
+                    this.resetAddProjectDetails();
+                    this.getAllProjectDetailsFromDatabase();
+                  })
+  
+                }
+              })
             })
+            
           }
 
 
